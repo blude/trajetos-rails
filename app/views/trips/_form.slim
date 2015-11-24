@@ -1,6 +1,6 @@
 = form_for(@trip) do |f|
 
-  = render partial: 'errors/list', locals: { form: @trip }
+  = render partial: 'errors/list', locals: { form: @trip } if @trip.errors.any?
 
   .field
     = f.label :name
