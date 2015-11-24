@@ -1,0 +1,15 @@
+p
+  strong Number:
+  = @route.number
+
+p
+  strong Name:
+  = @route.name
+
+p
+  strong Circular:
+  = @route.circulator
+
+= link_to 'Edit', edit_route_path(@route)
+|  |
+= link_to 'Back', routes_path

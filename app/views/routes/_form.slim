@@ -1,0 +1,20 @@
+= form_for(@route) do |f|
+
+  = render partial: 'errors/list', locals: { form: @route }
+
+  .field
+    = f.label :number
+    br
+    = f.text_field :number
+
+  .field
+    = f.label :name
+    br
+    = f.text_field :name
+
+  .field
+    = f.check_box :circulator
+    = f.label :circulator
+
+  .actions
+    = f.submit

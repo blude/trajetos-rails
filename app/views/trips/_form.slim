@@ -1,12 +1,15 @@
 = form_for(@trip) do |f|
+
   = render partial: 'errors/list', locals: { form: @trip }
 
   .field
     = f.label :name
+    br
     = f.text_field :name
 
   .field
     = f.label :route_id
+    br
     = f.collection_select :route_id, @routes, :id, :full_name, prompt: 'Select one…', include_blank: true
 
   .actions
