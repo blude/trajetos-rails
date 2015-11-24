@@ -9,5 +9,6 @@ html.no-js
     = yield :head
   body
     = render 'partials/flash' if flash.any?
+    = render 'partials/nav'
     = yield
     = yield :footer
