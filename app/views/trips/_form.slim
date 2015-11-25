@@ -10,7 +10,7 @@
   .field
     = f.label :route_id
     br
-    = f.collection_select :route_id, @routes, :id, :full_name, prompt: 'Select one…', include_blank: true
+    = f.collection_select :route_id, Route.all, :id, :full_name, prompt: 'Select one…', include_blank: true
 
   .actions
     = f.submit
