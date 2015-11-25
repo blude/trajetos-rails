@@ -10,7 +10,7 @@ class Trip < ActiveRecord::Base
   end
 
   def self.search(search)
-    Trip.where "name LIKE ?", "%#{search}%"
+    Trip.where("name LIKE ?", "%#{search}%")
   end
 
 end
