@@ -1,2 +1,11 @@
-h1 Pages#index
-p Find me in app/views/pages/index.html.erb
+h1 Trajetos
+
+= form_tag root_path, method: 'get'
+  .field
+    = label_tag :query, 'Search'
+    = text_field_tag :query, params[:query], placeholder: 'Search for trips'
+
+  .action
+    = submit_tag 'Search', name: nil
+
+= render 'partials/search_result'

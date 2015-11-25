@@ -8,4 +8,9 @@ class Trip < ActiveRecord::Base
   def headsign
     "#{self.route.number} #{name}"
   end
+
+  def self.search(query)
+    Trip.where("name LIKE ?", "%#{query}%")
+  end
+
 end
