@@ -1,2 +1,18 @@
-h1 Pages#index
-p Find me in app/views/pages/index.html.erb
+h1 Trajetos
+
+= form_tag root_path, method: 'get'
+  .field
+    = label_tag :search, 'Search'
+    = text_field_tag :search, params[:search], placeholder: 'Search for trips'
+
+  .action
+    = submit_tag 'Search', name: nil
+
+- if params[:search]
+  - if @trips.any?
+    p: strong #{pluralize @trips.count, 'trip'} found
+    ul
+      - @trips.each do |trip|
+        li = link_to trip.headsign, trip
+  - else
+    p No trips named “#{params[:search]}” were found.
