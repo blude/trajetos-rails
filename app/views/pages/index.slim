@@ -2,8 +2,8 @@ h1 Trajetos
 
 = form_tag root_path, method: 'get'
   .field
-    = label_tag :search, 'Search'
-    = text_field_tag :search, params[:search], placeholder: 'Search for trips'
+    = label_tag :query, 'Search'
+    = text_field_tag :query, params[:query], placeholder: 'Search for trips'
 
   .action
     = submit_tag 'Search', name: nil

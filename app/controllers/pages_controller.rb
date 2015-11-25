@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def index
-    if params[:search]
-      @trips = Trip.search(params[:search])
+    if params[:query]
+      @trips = Trip.search(params[:query])
     else
       @trips = Trip.none
     end

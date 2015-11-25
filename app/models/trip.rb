@@ -9,8 +9,8 @@ class Trip < ActiveRecord::Base
     "#{self.route.number} #{name}"
   end
 
-  def self.search(search)
-    Trip.where("name LIKE ?", "%#{search}%")
+  def self.search(query)
+    Trip.where("name LIKE ?", "%#{query}%")
   end
 
 end
