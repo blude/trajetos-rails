@@ -1,5 +1,6 @@
 class Trip < ActiveRecord::Base
   belongs_to :route
+  has_many :locations
 
   validates :route, presence: true, allow_blank: false
   validates :name, presence: true, length: { in: 3..20 }

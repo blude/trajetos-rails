@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-  around_filter :catch_not_found
+  around_action :catch_not_found
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
   # GET /trips
@@ -68,19 +68,19 @@ class TripsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_trip
-      @trip = Trip.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_trip
+    @trip = Trip.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def trip_params
-      params.require(:trip).permit(:name, :route_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def trip_params
+    params.require(:trip).permit(:name, :route_id)
+  end
 
-    def catch_not_found
-      yield
-    rescue ActiveRecord::RecordNotFound
-      redirect_to trips_url, :flash => { :error => 'Trip not found.' }
-    end
+  def catch_not_found
+    yield
+  rescue ActiveRecord::RecordNotFound
+    redirect_to trips_path, error: 'Error: Trip not found.'
+  end
 end
