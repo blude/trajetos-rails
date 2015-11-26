@@ -1,8 +1,8 @@
 class ChangeLatLngFromLocation < ActiveRecord::Migration
   def up
     change_table :locations do |t|
-      t.change :lat, :decimal, precision: 8, scale: 5
-      t.change :lng, :decimal, precision: 8, scale: 5
+      t.change :lat, :decimal, precision: 9, scale: 6
+      t.change :lng, :decimal, precision: 9, scale: 6
     end
   end
 
