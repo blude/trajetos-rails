@@ -18,3 +18,4 @@
 
 # Ignore project workspace file
 *.sublime-workspace
+*.sublime-project
