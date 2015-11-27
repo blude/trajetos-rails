@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :locations
   resources :trips
   resources :routes
+  resources :points
 
   root 'pages#index'
 
