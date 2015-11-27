@@ -3,5 +3,7 @@ class Point < ActiveRecord::Base
   has_one :point_type
   belongs_to :trip
 
-  validates :position, presence: true, numericality: true
+  acts_as_list scope: :trip
+
+  validates :position, numericality: true
 end
