@@ -9,6 +9,10 @@ class Point < ActiveRecord::Base
   validates :point_type_id, presence: true
   validates :trip_id, presence: true
 
+  def coords
+    "#{self.location.coords}"
+  end
+
   def type
     "#{self.point_type.name}"
   end
