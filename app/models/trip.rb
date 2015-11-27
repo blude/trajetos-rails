@@ -2,7 +2,7 @@ class Trip < ActiveRecord::Base
   belongs_to :route
   has_many :points, -> { order('position ASC') }
 
-  validates :route, presence: true, allow_blank: false
+  validates :route_id, presence: true
   validates :name, presence: true, length: { in: 3..20 }
 
   def headsign
