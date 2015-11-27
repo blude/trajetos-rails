@@ -5,7 +5,7 @@ class Point < ActiveRecord::Base
 
 #  acts_as_list scope: :trip
 
-  validates :location_id, presence: true
+  validates :location_id, presence: true, uniqueness: true
   validates :point_type_id, presence: true
   validates :trip_id, presence: true
 
