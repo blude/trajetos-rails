@@ -3,9 +3,11 @@ class Point < ActiveRecord::Base
   belongs_to :point_type
   belongs_to :trip
 
-  acts_as_list scope: :trip
+#  acts_as_list scope: :trip
 
-  validates :position, numericality: true
+  validates :location_id, presence: true
+  validates :point_type_id, presence: true
+  validates :trip_id, presence: true
 
   def type
     "#{self.point_type.name}"

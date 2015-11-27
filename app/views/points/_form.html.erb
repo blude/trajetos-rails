@@ -11,6 +11,36 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :point_type_id %><br>
+    <%= f.text_field :point_type_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location_id %><br>
+    <%= f.text_field :location_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :trip_id %><br>
+    <%= f.text_field :trip_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :position %><br>
+    <%= f.text_field :position %>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :hidden_from_map %>
+    <%= f.label :hidden_from_map %>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :hidden_from_list %>
+    <%= f.label :hidden_from_list %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
