@@ -11,15 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125022426) do
+ActiveRecord::Schema.define(version: 20151126154237) do
 
   create_table "locations", force: :cascade do |t|
-    t.float    "lat"
-    t.float    "lng"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "position"
+    t.decimal  "lat",        precision: 9, scale: 6
+    t.decimal  "lng",        precision: 9, scale: 6
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
+
+  create_table "point_types", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "points", force: :cascade do |t|
+    t.integer  "point_type_id"
+    t.integer  "position"
+    t.boolean  "hidden_from_map",  default: false
+    t.boolean  "hidden_from_list", default: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  add_index "points", ["point_type_id"], name: "index_points_on_point_type_id"
 
   create_table "routes", force: :cascade do |t|
     t.string   "number"
