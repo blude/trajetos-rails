@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :point_types
   resources :locations
   resources :trips
   resources :routes
