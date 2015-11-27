@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+AttributeType.create([
+  { name: 'address' },
+  { name: 'reference' },
+  { name: 'neighborhood' },
+  { name: 'stop_number' },
+])
