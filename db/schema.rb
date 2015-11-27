@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151127204609) do
+ActiveRecord::Schema.define(version: 20151127213239) do
+
+  create_table "attribute_types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "locations", force: :cascade do |t|
     t.decimal  "lat",        precision: 9, scale: 6
@@ -37,13 +43,13 @@ ActiveRecord::Schema.define(version: 20151127204609) do
 
   create_table "points", force: :cascade do |t|
     t.integer  "point_type_id"
-    t.integer  "location_id"
-    t.integer  "trip_id"
     t.integer  "position"
     t.boolean  "hidden_from_map",  default: false
     t.boolean  "hidden_from_list", default: false
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.integer  "trip_id"
+    t.integer  "location_id"
   end
 
   add_index "points", ["location_id"], name: "index_points_on_location_id"
